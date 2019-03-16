@@ -2,13 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
-use App\Http\Requests;
 use App\Disease;
+use App\Http\Requests;
 use App\Symptom;
+use Carbon\Carbon;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use RealRashid\SweetAlert\Facades\Alert;
-
+use Spatie\Activitylog\Models\Activity;
 class DiseaseController extends Controller
 {
     /**
@@ -43,13 +45,11 @@ class DiseaseController extends Controller
     public function store(Request $request)
     {
         //Validation
-        // $this->validate($request,[
-        //     'disease_name' => 'required',
-        //     'symptom1'=> 'required',
-        //     'symptom2'=> 'required',
-        //     'symptom3'=> 'required',
-            
-        // ]);
+         $this->validate($request,[
+             'name' => 'required',
+             'symptoms'=> 'required',
+       
+         ]);
 
 
        
@@ -57,10 +57,14 @@ class DiseaseController extends Controller
        $diseases=new Disease;
      
        $diseases->name=$request->input('name');
+
+       $diseases->description=$request->input('description');
        $diseases->save();
  $diseases->symptoms()->attach($request->symptoms);
        if($diseases->save())
        {
+        activity()->causedBy(Auth::user())->useLog('Add Disease')->log('Add Disease');
+
                 Alert::success('Disease Added Successfully');
 
        return redirect('/adminpanel/diseases');
@@ -102,28 +106,37 @@ class DiseaseController extends Controller
     {
          //Validation
         $this->validate($request,[
-            'disease_name' => 'required',
-            'symptom1'=> 'required',
-            'symptom2'=> 'required',
-            'symptom3'=> 'required',
+            'name' => 'required',
+            
             
         ]);
-        $diseases=Disease::find($id);
-      $sym1=Symptom::find($request->input('symptom1'));
-      $sym2=Symptom::find($request->input('symptom2'));
-      $sym3=Symptom::find($request->input('symptom3'));
-       $diseases->disease_name=$request->input('disease_name');
-       $diseases->symptom1=$sym1->id;
-      
-       $diseases->symptom2=$sym2->id;
-      $diseases->symptom3=$sym3->id;
-
-       if($diseases->save())
+        $data = $request->all();
+        $disease=Disease::find($id);
+       $disease->name=$request->input('name');
+       
+       if($disease->save())
        {
+        DB::table('diseases_symptoms')->where('disease_id',$id)->delete();
+
+        foreach ($data['symptoms'] as $sym => $value) {
+        DB::table('diseases_symptoms')->where('disease_id','=',$id)->insert([
+            'disease_id'=>$disease->id,
+            'symptom_id'=>$value,
+            
+            'created_at'=>Carbon::now(),
+            'updated_at'=>Carbon::now()
+
+         ]);
+
+        }
+        activity()->causedBy(Auth::user())->useLog('Update Disease')->log('Update Disease');
+
                 Alert::success('Disease Updated Successfully');
 
        return redirect('/adminpanel/diseases');
        }
+
+       
 
     }
 
@@ -137,6 +150,8 @@ class DiseaseController extends Controller
     {
          $disease=Disease::find($id);
         $disease->delete();
+        activity()->causedBy(Auth::user())->useLog('Delete Disease')->log('Delete Disease');
+
                 Alert::success('Disease Deleted Successfully');
 
         return redirect('/adminpanel/diseases');

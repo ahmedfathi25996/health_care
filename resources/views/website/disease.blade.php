@@ -80,8 +80,8 @@
                                         </div>
                                     </div>
 
-                                      <div class="form-group{{ $errors->has('symptoms[3]') ? ' has-error' : '' }}">
-                                        <label for="symptoms" class="col-md-4 control-label">Symptom 3</label>
+                                      <div class="form-group{{ $errors->has('symptoms[4]') ? ' has-error' : '' }}">
+                                        <label for="symptoms" class="col-md-4 control-label">Symptom 4</label>
             
                                         <div class="col-md-6">
                                                 <select name="symptoms[3]"  class="form-control input-sm">
@@ -93,9 +93,9 @@
 
                                                         @endforeach
                                                        </select>
-                                            @if ($errors->has('symptoms[3]'))
+                                            @if ($errors->has('symptoms[4]'))
                                                 <span class="help-block">
-                                                    <strong>{{ $errors->first('symptoms[3]') }}</strong>
+                                                    <strong>{{ $errors->first('symptoms[4]') }}</strong>
                                                 </span>
                                             @endif
                                             

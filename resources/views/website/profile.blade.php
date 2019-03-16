@@ -1,109 +1,248 @@
 @extends('layouts.app')
 
 @section('content')
-<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>AdminLTE 2 | User Profile</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <!-- Bootstrap 3.3.7 -->
+  {!!Html::style('admin/bower_components/bootstrap/dist/css/bootstrap.min.css') !!}
+  <!-- Font Awesome -->
+  {!!Html::style('admin/bower_components/font-awesome/css/font-awesome.min.css') !!}
+  <!-- Ionicons -->
+  <!-- Ionicons -->
+  {!!Html::style('admin/bower_components/Ionicons/css/ionicons.min.css') !!}
+  
+  <!-- Theme style -->
+  {!!Html::style('admin/dist/css/AdminLTE.min.css') !!}
+  
+  <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+       {!!Html::style('admin/dist/css/skins/_all-skins.min.css') !!}
+  
+  
+  <!-- Morris chart -->
+  {!!Html::style('admin/bower_components/morris.js/morris.css') !!}
+  
+  <!-- jvectormap -->
+  {!!Html::style('admin/bower_components/jvectormap/jquery-jvectormap.css') !!}
+  
+  <!-- Date Picker -->
+  {!!Html::style('admin/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css') !!}
+  
+  <!-- Daterange picker -->
+  {!!Html::style('admin/bower_components/bootstrap-daterangepicker/daterangepicker.css') !!}
+  
+  <!-- bootstrap wysihtml5 - text editor -->
+  {!!Html::style('admin/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css') !!}
+  
+  <!-- Google Font -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
 
+ 
+ 
 
-<div class="container">
-<br>
-<br>
-	<div class="row" id="main">
-        <div class="col-md-4 well" id="leftPanel">
-            <div class="row">
-                <div class="col-md-12">
-                	<div>
-        				<img src="/images/{{ Auth::user()->image  }}" alt="Texto Alternativo" class="img-circle img-thumbnail">
-        				<h2>{{Auth::user()->name}}</h2>
-        				<h5>{{Auth::user()->email}}</h5>
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-warning">
-                                Social</button>
-                            <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown">
-                                <span class="caret"></span><span class="sr-only">Social</span>
-                            </button>
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a href="#">Twitter</a></li>
-                                <li><a href="https://plus.google.com/+Jquery2dotnet/posts">Google +</a></li>
-                                <li><a href="https://www.facebook.com/jquery2dotnet">Facebook</a></li>
-                                <li class="divider"></li>
-                                <li><a href="#">Github</a></li>
-                            </ul>
-                        </div>
-        			</div>
-        		</div>
+  <!-- Content Wrapper. Contains page content -->
+  
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+     
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+
+      <div class="row">
+        <div class="col-md-3">
+
+          
+   <form enctype="multipart/form-data" method="POST" action="{{ url('/user/profile/image') }}" >
+          <div class="box box-primary">
+            <div class="box-body box-profile">
+              <img class="profile-user-img img-responsive img-circle" src='{{ asset("images/$user->image") }}' alt="User profile picture">
+             <input type="file" name="image">
+             <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                            <div class="form-group">
+                            <div class="col-md-6 col-md-offset-4">
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fa fa-btn fa-user"></i> Change
+                                </button>
+                            </div>
+                        </div> <br>
+              <h3 class="profile-username text-center">{{Auth::user()->name}}</h3>
+
+              <p class="text-muted text-center">Software Engineer</p>
+
+             
+
             </div>
+          </form>
+           
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+
+          <!-- About Me Box -->
+          <div class="box box-primary">
+            <div class="box-header with-border">
+              <h3 class="box-title">About Me</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+
+              
+              <strong><i class="fa fa-map-marker margin-r-5"></i> Location</strong>
+
+              <p class="text-muted">{{Auth::user()->address}}</p>
+
+              <hr>
+
+              <strong><i class="fa fa-pencil margin-r-5"></i>Phone Number</strong>
+
+              <p class="text-muted">{{Auth::user()->phone_number}}</p>
+
+              
+
+              
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
         </div>
-        <div class="col-md-8 well" id="rightPanel">
-            <div class="row">
-    <div class="col-md-12">
-    	<form role="form">
-			<h2>Edit your profile.<small>It's always easy</small></h2>
-			<hr class="colorgraph">
-			<div class="row">
-				<div class="col-xs-12 col-sm-6 col-md-6">
-					<div class="form-group">
-                        <input type="text" name="first_name" id="first_name" class="form-control input-lg" placeholder="First Name" tabindex="1">
-					</div>
-				</div>
-				<div class="col-xs-12 col-sm-6 col-md-6">
-					<div class="form-group">
-						<input type="text" name="last_name" id="last_name" class="form-control input-lg" placeholder="Last Name" tabindex="2">
-					</div>
-				</div>
-			</div>
-			<div class="form-group">
-				<input type="email" name="email" id="email" class="form-control input-lg" placeholder="Email Address" tabindex="4">
-			</div>
-			<div class="row">
-				<div class="col-xs-12 col-sm-6 col-md-6">
-					<div class="form-group">
-						<input type="password" name="password" id="password" class="form-control input-lg" placeholder="Password" tabindex="5">
-					</div>
-				</div>
-				<div class="col-xs-12 col-sm-6 col-md-6">
-					<div class="form-group">
-						<input type="password" name="password_confirmation" id="password_confirmation" class="form-control input-lg" placeholder="Confirm Password" tabindex="6">
-					</div>
-				</div>
-			</div>
-			<hr class="colorgraph">
-			<div class="row">
-				<div class="col-xs-12 col-md-6"></div>
-				<div class="col-xs-12 col-md-6"><a href="#" class="btn btn-success btn-block btn-lg">Save</a></div>
-			</div>
-		</form>
-	</div>
-</div>
-<!-- Modal -->
-<div class="modal fade" id="t_and_c_m" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-	<div class="modal-dialog modal-lg">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-				<h4 class="modal-title" id="myModalLabel">Terms & Conditions</h4>
-			</div>
-			<div class="modal-body">
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, itaque, modi, aliquam nostrum at sapiente consequuntur natus odio reiciendis perferendis rem nisi tempore possimus ipsa porro delectus quidem dolorem ad.</p>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, itaque, modi, aliquam nostrum at sapiente consequuntur natus odio reiciendis perferendis rem nisi tempore possimus ipsa porro delectus quidem dolorem ad.</p>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, itaque, modi, aliquam nostrum at sapiente consequuntur natus odio reiciendis perferendis rem nisi tempore possimus ipsa porro delectus quidem dolorem ad.</p>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, itaque, modi, aliquam nostrum at sapiente consequuntur natus odio reiciendis perferendis rem nisi tempore possimus ipsa porro delectus quidem dolorem ad.</p>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, itaque, modi, aliquam nostrum at sapiente consequuntur natus odio reiciendis perferendis rem nisi tempore possimus ipsa porro delectus quidem dolorem ad.</p>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, itaque, modi, aliquam nostrum at sapiente consequuntur natus odio reiciendis perferendis rem nisi tempore possimus ipsa porro delectus quidem dolorem ad.</p>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, itaque, modi, aliquam nostrum at sapiente consequuntur natus odio reiciendis perferendis rem nisi tempore possimus ipsa porro delectus quidem dolorem ad.</p>
-			</div>
-			<div class="modal-footer">
-				<button type="button" class="btn btn-primary" data-dismiss="modal">I Agree</button>
-			</div>
-		</div><!-- /.modal-content -->
-	</div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-</div>
+        <!-- /.col -->
+        <div class="col-md-9">
+          <div class="nav-tabs-custom">
+           
+            <div class="tab-content">
+              
+            
+
+             
+              <div class="form-horizontal">
+
+                {!! Form::open(['action' => ['ProfileController@update',Auth::user()->id],'method' => 'PATCH'],['class'=>'form-horizontal']) !!}
+                  <div class="form-group">
+                    <label for="inputName" class="col-sm-2 control-label">Name</label>
+
+                    <div class="col-sm-10">
+                      <input type="text" name="name" class="form-control" value="{{Auth::user()->name}}" id="inputName" placeholder="Name">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="inputEmail" class="col-sm-2 control-label">Email</label>
+
+                    <div class="col-sm-10">
+                      <input type="email" name="email" value="{{Auth::user()->email}}" class="form-control" id="inputEmail" placeholder="Email">
+                    </div>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="inputExperience" class="col-sm-2 control-label">Phone Number</label>
+
+                    <div class="col-sm-10">
+                      <input class="form-control" value="{{Auth::user()->phone_number}}" name="phone_number" type="text" id="inputExperience" placeholder="Phone Number">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="inputSkills" class="col-sm-2 control-label">Address</label>
+
+                    <div class="col-sm-10">
+                      <input type="text" name="address" value="{{Auth::user()->address}}" class="form-control" id="inputSkills" placeholder="Address">
+                    </div>
+                  </div>
+                
+                  <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                      <button type="submit" class="btn btn-danger">Submit</button>
+                    </div>
+                  </div>
+                  {!! Form::close() !!}
+                  </div>
+              </div>
+              <!-- /.tab-pane -->
+            </div>
+            <!-- /.tab-content -->
+          </div>
+          <!-- /.nav-tabs-custom -->
         </div>
-     </div>
-</div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+ 
+
+ 
+  <!-- Add the sidebar's background. This div must be placed
+       immediately after the control sidebar -->
+  <div class="control-sidebar-bg"></div>
+
+{!!Html::script('admin/bower_components/jquery/dist/jquery.min.js')  !!}
+
+<!-- jQuery UI 1.11.4 -->
+{!!Html::script('admin/bower_components/jquery-ui/jquery-ui.min.js')  !!}
+
+<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+<script>
+  $.widget.bridge('uibutton', $.ui.button);
+</script>
+<!-- Bootstrap 3.3.7 -->
+{!!Html::script('admin/bower_components/bootstrap/dist/js/bootstrap.min.js')  !!}
+
+<!-- Morris.js charts -->
+{!!Html::script('admin/bower_components/raphael/raphael.min.js')  !!}
+
+{!!Html::script('admin/bower_components/morris.js/morris.min.js')  !!}
+
+<!-- Sparkline -->
+{!!Html::script('admin/bower_components/jquery-sparkline/dist/jquery.sparkline.min.js')  !!}
+
+<!-- jvectormap -->
+{!!Html::script('admin/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js')  !!}
+
+{!!Html::script('admin/plugins/jvectormap/jquery-jvectormap-world-mill-en.js')  !!}
+
+<!-- jQuery Knob Chart -->
+{!!Html::script('admin/bower_components/jquery-knob/dist/jquery.knob.min.js')  !!}
+
+<!-- daterangepicker -->
+{!!Html::script('admin/bower_components/moment/min/moment.min.js')  !!}
+
+{!!Html::script('admin/bower_components/bootstrap-daterangepicker/daterangepicker.js')  !!}
+
+<!-- datepicker -->
+{!!Html::script('admin/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js')  !!}
+
+<!-- Bootstrap WYSIHTML5 -->
+{!!Html::script('admin/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js')  !!}
+
+<!-- Slimscroll -->
+{!!Html::script('admin/bower_components/jquery-slimscroll/jquery.slimscroll.min.js')  !!}
+
+<!-- FastClick -->
+{!!Html::script('admin/bower_components/fastclick/lib/fastclick.js')  !!}
+
+<!-- AdminLTE App -->
+{!!Html::script('admin/dist/js/adminlte.min.js')  !!}
+
+<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+{!!Html::script('admin/dist/js/pages/dashboard.js')  !!}
+
+
+<!-- AdminLTE for demo purposes -->
+{!!Html::script('admin/dist/js/demo.js')  !!}
+
+</body>
+</html>
 
 
 @endsection

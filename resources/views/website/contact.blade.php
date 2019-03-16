@@ -11,7 +11,7 @@
 			   			<div class="col-md-8 col-md-offset-2 col-md-pull-2 slider-text">
 			   				<div class="slider-text-inner">
 			   					<h1>Get in <strong>touch</strong></h1>
-									<h2>html5 Bootstrap Templates Made by colorlib.com</h2>
+									<h2>Health Care System</h2>
 			   				</div>
 			   			</div>
 			   		</div>
@@ -45,36 +45,37 @@
 					<div class="row">
 						<div class="col-md-6">
 							<h2>Get In Touch</h2>
-							<form action="#">
+							<form method="POST" action="{{ url('/contactus') }}">
+								 {{ csrf_field() }}
 								<div class="row form-group">
 									<div class="col-md-6">
 										<label for="fname">First Name</label>
-										<input type="text" id="fname" class="form-control mb" placeholder="Your firstname">
+										<input type="text" name="firstname" id="fname" class="form-control mb" placeholder="Your firstname">
 									</div>
 									<div class="col-md-6">
 										<label for="lname">Last Name</label>
-										<input type="text" id="lname" class="form-control" placeholder="Your lastname">
+										<input type="text" name="lastname" id="lname" class="form-control" placeholder="Your lastname">
 									</div>
 								</div>
 
 								<div class="row form-group">
 									<div class="col-md-12">
 										<label for="email">Email</label>
-										<input type="text" id="email" class="form-control" placeholder="Your email address">
+										<input type="text" name="email" id="email" class="form-control" placeholder="Your email address">
 									</div>
 								</div>
 
 								<div class="row form-group">
 									<div class="col-md-12">
 										<label for="subject">Subject</label>
-										<input type="text" id="subject" class="form-control" placeholder="Your subject of this message">
+										<input type="text" name="subject" id="subject" class="form-control" placeholder="Your subject of this message">
 									</div>
 								</div>
 
 								<div class="row form-group">
 									<div class="col-md-12">
 										<label for="message">Message</label>
-										<textarea name="message" id="message" cols="30" rows="10" class="form-control" placeholder="Say something about us"></textarea>
+										<textarea name="message"  id="message" cols="30" rows="10" class="form-control" placeholder="Say something about us"></textarea>
 									</div>
 								</div>
 								<div class="form-group text-center">

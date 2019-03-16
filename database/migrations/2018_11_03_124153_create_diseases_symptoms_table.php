@@ -14,11 +14,16 @@ class CreateDiseasesSymptomsTable extends Migration
     public function up()
     {
         Schema::create('diseases_symptoms', function (Blueprint $table) {
-            
-            $table->integer('disease_id');
-            $table->integer('symptom_id');
+            $table->increments('id');
+
+            $table->integer('disease_id')->unsigned();
+            $table->foreign('disease_id')->references('id')
+            ->on('diseases')->onDelete('cascade');
+            $table->integer('symptom_id')->unsigned();
+            $table->foreign('symptom_id')->references('id')
+            ->on('symptoms')->onDelete('cascade');
             $table->timestamps();
-            $table->primary(['disease_id','symptom_id']);
+          
         });
     }
 

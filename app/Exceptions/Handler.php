@@ -4,6 +4,7 @@ namespace App\Exceptions;
 
 use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+//use use Swift_TransportException;
 
 class Handler extends ExceptionHandler
 {
@@ -34,6 +35,8 @@ class Handler extends ExceptionHandler
      */
     public function report(Exception $exception)
     {
+        //throw $exception;
+
         parent::report($exception);
     }
 
@@ -46,6 +49,7 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
+        
         return parent::render($request, $exception);
     }
 }

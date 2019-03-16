@@ -37,7 +37,6 @@ All Members
                     <th>Symptoms</th>
                   
                    
-                    <th>Created at</th>
 
                     <th> Control </th>
                   </tr>
@@ -53,7 +52,6 @@ All Members
                     </td>
                    
 
-                  <td>{{$disease->created_at}}</td>
                   <td>
                       <a href="/adminpanel/diseases/{{$disease->id}}/edit" class="btn btn-primary"> Edit </a>
                       {!! Form::open(['action'=>['DiseaseController@destroy',$disease->id],'method'=>'POST','class'=>'pull-right' ])  !!}
@@ -78,6 +76,11 @@ All Members
 @endsection
 
 @section('footer')
+<style type="text/css">
+  #example2 td{
+    width: 2px;
+  }
+</style>
 {!! Html::script('admin/bower_components/datatables.net/js/jquery.dataTables.min.js') !!}
 
 {!! Html::script('admin/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js') !!}

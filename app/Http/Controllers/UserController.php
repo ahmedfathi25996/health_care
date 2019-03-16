@@ -9,9 +9,15 @@ use App\User;
 use Illuminate\Support\Facades\Mail;
 use RealRashid\SweetAlert\Facades\Alert;
 use Spatie\Activitylog\Models\Activity;
+use Illuminate\Auth\Events\Registered;
+use App\Events\UserRegistered;
+//use App\Jobs\ActivationJob;
+use Carbon\Carbon;
+
 
 class UserController extends Controller
 {
+
    /**
      * Display a listing of the resource.
      *
@@ -19,8 +25,10 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users=User::all();
+
+        $users=User::where('id','!=', Auth::user()->id)->get();
         return view('admin.user.index',compact('users'));
+
     }
 
    
@@ -55,7 +63,7 @@ class UserController extends Controller
 
 
         //Handel Upload User Image
-        $fileName = 'null';
+         $fileName = 'null';
         if($request->hasFile('image')){
             $file = $request->file('image') ;
             $fileName = $file->getClientOriginalName() ;
@@ -65,7 +73,7 @@ class UserController extends Controller
         }
         
         else{
-           $fileName='user-male-icon.jpg';
+           $fileName='user-male-icon.png';
        }
        
        $users=new User;
@@ -73,12 +81,16 @@ class UserController extends Controller
        $users->name=$request->input('name');
        $users->email=$request->input('email');
        $users->password=bcrypt($request->input('password'));
+       //$user->api_token= str_random(60);
+
        $users->role=$request->input('role');
+       $users->activated=$request->input('activated');
+
        $users->image=$fileName;
 
        if($users->save())
        {
-        activity()->causedBy($users)->log('Look mum, I logged something');
+        activity()->causedBy($users)->useLog('Add User')->log('Add User By Admin');
         Alert::success('User Added Successfuly', 'Success');
        return redirect('/adminpanel/users');
        }  
@@ -148,6 +160,8 @@ class UserController extends Controller
        $user->role=$request->input('role');
       // $user->image=$fileName;
        $user->save();
+       activity()->causedBy($user)->useLog('Update User')->log('Update User By Admin');
+
         Alert::success('User Updated Successfuly');
        return redirect('/adminpanel/users');
     }
@@ -163,6 +177,8 @@ class UserController extends Controller
         
         $user=User::find($id);
         $user->delete();
+        activity()->causedBy($user)->useLog('Delete User')->log('Delete User By Admin');
+
         Alert::success('User Deleted Successfuly');
 
         return redirect('/adminpanel/users');
@@ -181,8 +197,76 @@ class UserController extends Controller
       $message->subject($data['subject']);
 
      });
+     activity()->causedBy(Auth::user())->useLog('Send Email')->log('Send Email By Admin');
+
       Alert::success('E-Mail Has Been Sent Successfuly');
      return redirect('/adminpanel');
 
     }
+    public function register(Request $request)
+    {
+        $this->validate($request, [
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|unique:users',
+            'password'=>'required|string|min:6|confirmed'
+        ]);
+        $fileName = 'null';
+        if($request->hasFile('image')){
+            $file = $request->file('image') ;
+            $fileName = $file->getClientOriginalName() ;
+            $destinationPath = public_path().'/images/' ;
+            
+            $file->move($destinationPath,$fileName);
+        }
+        
+        else{
+           $fileName='user-male-icon.png';
+       }
+        $user= new User();
+        $user->name= $request->input('name');
+        $user->email=$request->input('email');
+        
+        
+        $user->password=bcrypt($request->input('password'));
+
+        $user->api_token= str_random(60);
+        $user->image=$fileName;
+        if($user->save())
+        {
+            Auth::login($user);
+            
+             event(new UserRegistered($user));
+             //$job=(new ActivationJob($user->email))->delay(Carbon::now()->addSeconds(5));
+             //dispatch($job);
+             activity()->causedBy($user)->useLog('Registeration')->log('Register User');
+
+            Alert::success('Register Successfully, Check Your Email For Activation', 'Success');
+
+            return redirect('/user/profile');
+        }
+
+
+     
+
+          
+
+         
+    }
+     public function activation($api_token)
+    {
+         $user= User::active($api_token);
+         if( $user)
+         {
+             $user->activated= 1;
+            
+             $user->save();
+             activity()->causedBy($user)->useLog('Activation')->log('Activate User');
+             Alert::success('Acount Activited Successfuly', 'Success');
+             return redirect('/');
+         }
+
+       
+    }
+
+   
 }

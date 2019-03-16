@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAdminMessagesTable extends Migration
+class CreateFeedbackTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateAdminMessagesTable extends Migration
      */
     public function up()
     {
-        Schema::create('admin_messages', function (Blueprint $table) {
-          $table->increments('id');
-        $table->integer('user_id')->unsigned();
-      $table->text('message');
-       $table->timestamps();
+        Schema::create('feedback', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('user_id');
+            $table->text('comment');
+            $table->timestamps();
         });
     }
 
@@ -28,6 +28,6 @@ class CreateAdminMessagesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('admin_messages');
+        Schema::dropIfExists('feedback');
     }
 }

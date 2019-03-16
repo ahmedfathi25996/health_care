@@ -6,14 +6,27 @@ use Illuminate\Http\Request;
 use App\User;
 use App\Message;
 use App\Events\NewMessage;
+use Illuminate\Support\Facades\Auth;
 
 class ContactsController extends Controller
 {
     public function get()
     {
         // get all users except the authenticated one
-        $contacts = User::where('id', '!=', auth()->id())->get();
+        $user=Auth::user();
+        
+        if($user->role == 'patient')
+        {
+        $contacts = User::where('id', '!=', auth()->id())->where('role','doctor')->get();
+        }
+        elseif($user->role == 'doctor')
+        {
+        $contacts =User::where('id','!=', auth()->id())->where('role','patient')->get();
+    }
+    else{
+                $contacts =User::where('id','!=', auth()->id())->get();
 
+    }
         // get a collection of items where sender_id is the user who sent us a message
         // and messages_count is the number of unread messages we have from him
         $unreadIds = Message::select(\DB::raw('`from` as sender_id, count(`from`) as messages_count'))

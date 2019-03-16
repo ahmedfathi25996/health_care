@@ -161,6 +161,9 @@ ConsoleTVs\Charts\ChartsServiceProvider::class,
         App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        Intervention\Image\ImageServiceProvider::class
+
+
 
     ],
 
@@ -214,6 +217,11 @@ ConsoleTVs\Charts\ChartsServiceProvider::class,
       'Html' => Collective\Html\HtmlFacade::class,
       'Alert' => RealRashid\SweetAlert\Facades\Alert::class,
       'Charts' => ConsoleTVs\Charts\Facades\Charts::class,
+      'Image' => Intervention\Image\Facades\Image::class,
+
+
+
+
     ],
 
 ];

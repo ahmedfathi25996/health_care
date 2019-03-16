@@ -13,7 +13,7 @@
                             <div class="slider-text-inner">
                                 <h1>Your Health <strong>is always <br>in the first place</strong></h1>
                                     <h2>Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</h2>
-                                    <p><a class="btn btn-primary btn-lg btn-learn" href="#">Make an Appointment</a></p>
+                                    
                             </div>
                         </div>
                     </div>
@@ -27,7 +27,7 @@
                             <div class="slider-text-inner">
                                 <h1>We help you <strong>to find the best doctor around you</strong></h1>
                                     <h2>Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</h2>
-                                    <p><a class="btn btn-primary btn-lg btn-learn" href="#">Make an Appointment</a></p>
+                                    
                             </div>
                         </div>
                     </div>
@@ -41,7 +41,7 @@
                             <div class="slider-text-inner">
                                 <h1>Guaranted <strong>safe &amp; potent</strong> Medicine</h1>
                                     <h2>Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</h2>
-                                    <p><a class="btn btn-primary btn-lg btn-learn" href="#">Make an Appointment</a></p>
+                                   
                             </div>
                         </div>
                     </div>
@@ -55,7 +55,7 @@
                             <div class="slider-text-inner">
                                 <h1>Helping to improve <strong>quality stimulate</strong> innovation</h1>
                                     <h2>Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</h2>
-                                    <p><a class="btn btn-primary btn-lg btn-learn" href="#">Make an Appointment</a></p>
+                                   
                             </div>
                         </div>
                     </div>
@@ -65,53 +65,7 @@
         </div>
     </aside>
 
-    <div id="colorlib-counter" class="colorlib-counters">
-        <div class="overlay"></div>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2 col-md-push-2 counter-wrap">
-                    <div class="row">
-                        <div class="col-md-3 col-sm-6 animate-box">
-                            <div class="desc">
-                                <p class="wrap">
-                                    <span class="icon"><i class="flaticon-healthy"></i></span>
-                                    <span class="colorlib-counter js-counter" data-from="0" data-to="3297" data-speed="5000" data-refresh-interval="50"></span>
-                                </p>
-                                <span class="colorlib-counter-label">Satisfied Customer</span>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6 animate-box">
-                            <div class="desc">
-                                <p class="wrap">
-                                    <span class="icon"><i class="flaticon-hospital"></i></span>
-                                    <span class="colorlib-counter js-counter" data-from="0" data-to="378" data-speed="5000" data-refresh-interval="50"></span>
-                                </p>
-                                <span class="colorlib-counter-label">Hospitals</span>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6 animate-box">
-                            <div class="desc">
-                                <p class="wrap">
-                                    <span class="icon"><i class="flaticon-healthy-1"></i></span>
-                                    <span class="colorlib-counter js-counter" data-from="0" data-to="400" data-speed="5000" data-refresh-interval="50"></span>
-                                </p>
-                                <span class="colorlib-counter-label">Qualified Doctor</span>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6 animate-box">
-                            <div class="desc">
-                                <p class="wrap">
-                                    <span class="icon"><i class="flaticon-ambulance"></i></span>
-                                    <span class="colorlib-counter js-counter" data-from="0" data-to="30" data-speed="5000" data-refresh-interval="50"></span>
-                                </p>
-                                <span class="colorlib-counter-label">Departments</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+   
 
     <div id="colorlib-services">
         <div class="container">
@@ -124,7 +78,7 @@
                                     <i class="flaticon-hospital"></i>
                                 </span>
                                 <div class="desc">
-                                    <h3><a href="#">Diagnostics and emergency treatment</a></h3>
+                                    <h3>Diagnostics and emergency treatment</h3>
                                 </div>
                             </div>
                         </div>
@@ -134,7 +88,7 @@
                                     <i class="flaticon-healthy-1"></i>
                                 </span>
                                 <div class="desc">
-                                    <h3><a href="#">Home medical appointments</a></h3>
+                                    <h3>Home medical appointments</h3>
                                 </div>
                             </div>
                         </div>
@@ -144,7 +98,7 @@
                                     <i class="flaticon-stethoscope"></i>
                                 </span>
                                 <div class="desc">
-                                    <h3><a href="#">Pharmacy refunded from hospital</a></h3>
+                                    <h3>Pharmacy refunded from hospital</h3>
                                 </div>
                             </div>
                         </div>
@@ -154,69 +108,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="services-no-flex">
-                        <div class="one-fifth animate-box">
-                            <div class="services">
-                                <span class="icon">
-                                    <i class="flaticon-blood-donation"></i>
-                                </span>
-                                <div class="desc">
-                                    <h3><a href="#">Long term medical care in a hospital</a></h3>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="services-wrap-flex">
-                            <div class="one-fifth services-img animate-box" style="background-image: url(images/services-1.jpg);">
-                                <div class="services">
-                                    <div class="desc">
-                                        <span>Mission</span>
-                                        <h3><a href="#">The correct diagnosis is half the battle</a></h3>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="one-half">
-                                <div class="one-full-flex">
-                                    <div class="one-fifth services-img animate-box" style="background-image: url(images/services-2.jpg);">
-                                        <div class="services">
-                                            <div class="desc">
-                                                <span>Vision</span>
-                                                <h3><a href="#">We refund 50% of the cost of medicines</a></h3>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="one-fifth animate-box">
-                                        <div class="services">
-                                            <span class="icon">
-                                                <i class="flaticon-radiation"></i>
-                                            </span>
-                                            <div class="desc">
-                                                <h3><a href="#">A specialized laboratory research</a></h3>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="one-fifth animate-box">
-                                        <div class="services">
-                                            <span class="icon">
-                                                <i class="flaticon-ambulance"></i>
-                                            </span>
-                                            <div class="desc">
-                                                <h3><a href="#">Medical transport to the hospital</a></h3>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="one-full-flex animate-box">
-                                    <div class="services-desc">
-                                        <div class="desc">
-                                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-                                            <a href="#" class="btn btn-primary">View services</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                   
                 </div>
             </div>
         </div>
@@ -300,41 +192,39 @@
                     <div class="half features-wrap">
                         <div class="features-services animate-box">
                             <div class="colorlib-heading animate-box">
-                                <h2>What makes us best?</h2>
+                                <h2>Kindlly , Leave a Feedback</h2>
                             </div>
                             <div class="row">
-                                <div class="col-md-6">
-                                    <div class="features animate-box">
-                                        <span class="icon text-center"><i class="flaticon-healthy-1"></i></span>
-                                        <div class="desc">
-                                            <h3>Qualified Doctors</h3>
-                                            <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. </p>
-                                        </div>
-                                    </div>
-                                    <div class="features animate-box">
-                                        <span class="icon text-center"><i class="flaticon-stethoscope"></i></span>
-                                        <div class="desc">
-                                            <h3>Free Consultation</h3>
-                                            <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. </p>
-                                        </div>
-                                    </div>
+                                <div class="col-md-8">
+                                <form method="POST" action="{{ url('/feedback') }}">
+								 {{ csrf_field() }}
+								<div class="row form-group">
+									<div class="col-md-6">
+										<label for="fname">First Name</label>
+										<input type="text" name="firstname" id="fname" class="form-control mb" placeholder="Your firstname">
+									</div>
+									<div class="col-md-6">
+										<label for="lname">Last Name</label>
+										<input type="text" name="lastname" id="lname" class="form-control" placeholder="Your lastname">
+									</div>
+								</div>
+
+								
+
+
+								<div class="row form-group">
+									<div class="col-md-12">
+										<label for="message">Comment</label>
+										<textarea name="comment"  id="comment" cols="30" rows="10" class="form-control" placeholder="Say something about us"></textarea>
+									</div>
+								</div>
+								<div class="form-group text-center">
+									<input type="submit" value="Send Message" class="btn btn-primary">
+								</div>
+							</form>
+                                    
                                 </div>
-                                <div class="col-md-6">
-                                    <div class="features animate-box">
-                                        <span class="icon text-center"><i class="flaticon-medical-1"></i></span>
-                                        <div class="desc">
-                                            <h3>Online Enrollment</h3>
-                                            <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. </p>
-                                        </div>
-                                    </div>
-                                    <div class="features animate-box">
-                                        <span class="icon text-center"><i class="flaticon-radiation"></i></span>
-                                        <div class="desc">
-                                            <h3>Modern Facilities</h3>
-                                            <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. </p>
-                                        </div>
-                                    </div>
-                                </div>
+                               
                             </div>
                         </div>
                     </div>
@@ -356,51 +246,23 @@
                 <div class="col-md-12 animate-box">
                     <div class="row">
                         <div class="owl-carousel2">
+                            @foreach($users as $user)
+                         
                             <div class="item">
                                 <div class="col-md-6">
                                     <div class="doctor-desc">
-                                        <h3><a href="#">Dr. Paul Armstrong</a></h3>
-                                        <span class="specialty">Dental Hygienist</span>
+                                        <h3><a href="#">Dr. {{$user->name}}</a></h3>
+                                        <span class="specialty">{{$user->email}}</span>
                                         <p>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane. Pityful a rethoric question ran over her cheek, then she continued her way.</p>
                                         <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
-                                        <p><a href="#" class="btn btn-primary">Email us</a> <a href="#" class="btn btn-primary btn-outline">Make an appointment</a></p>
+                                        
                                     </div>
                                 </div>
-                                <div class="col-md-6">
-                                    <div class="doctor-img" style="background-image: url(images/staff-3.jpg);">
+                                 <div class="col-md-6">
+                                    <img class="doctor-img" src='{{ asset("images/{$user->image}") }}' style="background-image;">                                      
                                     </div>
-                                </div>
                             </div>
-                            <div class="item">
-                                <div class="col-md-6">
-                                    <div class="doctor-desc">
-                                        <h3><a href="#">Dr. Paul Armstrong</a></h3>
-                                        <span class="specialty">Dental Hygienist</span>
-                                        <p>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane. Pityful a rethoric question ran over her cheek, then she continued her way.</p>
-                                        <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
-                                        <p><a href="#" class="btn btn-primary">Email us</a> <a href="#" class="btn btn-primary btn-outline">Make an appointment</a></p>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="doctor-img" style="background-image: url(images/staff-1.jpg);">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="col-md-6">
-                                    <div class="doctor-desc">
-                                        <h3><a href="#">Dr. Paul Armstrong</a></h3>
-                                        <span class="specialty">Dental Hygienist</span>
-                                        <p>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane. Pityful a rethoric question ran over her cheek, then she continued her way.</p>
-                                        <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
-                                        <p><a href="#" class="btn btn-primary">Email us</a> <a href="#" class="btn btn-primary btn-outline">Make an appointment</a></p>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="doctor-img" style="background-image: url(website/images/staff-2.jpg);">
-                                    </div>
-                                </div>
-                            </div>
+                           @endforeach
                         </div>
                     </div>
                 </div>
@@ -412,62 +274,27 @@
         <div class="container">
             <div class="row animate-box">
                 <div class="col-md-12 colorlib-heading">
-                    <h2>Our patients and their opinions</h2>
+                    <h2>Our Users and their opinions</h2>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-12 animate-box">
                     <div class="owl-carousel">
+                    @foreach($feedbacks as $feed)
                         <div class="item">
                             <div class="testimony">
-                                <span class="img-user" style="background-image: url(website/images/person1.jpg);"></span>
-                                <span class="user">Edward Tom</span>
+                            <img class="img-user" src='{{ asset("images/{$feed->user->image}") }}' alt="User profile picture" style="width:100px;height:100px;">
+
+                                <span class="user">{{$feed->user->name}}</span>
                                 <blockquote>
-                                    <p>"Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar."</p>
+                                    <p>{{$feed->comment}}</p>
                                     <p class="color"><span><i class="icon-star3"></i></span><span><i class="icon-star3"></i></span><span><i class="icon-star3"></i></span><span><i class="icon-star3"></i></span><span><i class="icon-star3"></i></span></p>
                                 </blockquote>
                             </div>
                         </div>
-                        <div class="item">
-                            <div class="testimony">
-                                <span class="img-user" style="background-image: url(website/images/person2.jpg);"></span>
-                                <span class="user">Carl Bean</span>
-                                <blockquote>
-                                    <p>"Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar."</p>
-                                    <p class="color"><span><i class="icon-star3"></i></span><span><i class="icon-star3"></i></span><span><i class="icon-star3"></i></span><span><i class="icon-star3"></i></span><span><i class="icon-star3"></i></span></p>
-                                </blockquote>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="testimony">
-                                <span class="img-user" style="background-image: url(website/images/person3.jpg);"></span>
-                                <span class="user">John Bay</span>
-                                <blockquote>
-                                    <p>"The Big Oxmox advised her not to do so, because there were thousands of bad Commas, wild Question Marks and devious Semikoli."</p>
-                                    <p class="color"><span><i class="icon-star3"></i></span><span><i class="icon-star3"></i></span><span><i class="icon-star3"></i></span><span><i class="icon-star3"></i></span><span><i class="icon-star3"></i></span></p>
-                                </blockquote>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="testimony">
-                                <span class="img-user" style="background-image: url(website/images/person1.jpg);"></span>
-                                <span class="user">Ronald Duck</span>
-                                <blockquote>
-                                    <p>"Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar."</p>
-                                    <p class="color"><span><i class="icon-star3"></i></span><span><i class="icon-star3"></i></span><span><i class="icon-star3"></i></span><span><i class="icon-star3"></i></span><span><i class="icon-star3"></i></span></p>
-                                </blockquote>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="testimony">
-                                <span class="img-user" style="background-image: url(website/images/person2.jpg);"></span>
-                                <span class="user">Justine Mill</span>
-                                <blockquote>
-                                    <p>"Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar."</p>
-                                    <p class="color"><span><i class="icon-star3"></i></span><span><i class="icon-star3"></i></span><span><i class="icon-star3"></i></span><span><i class="icon-star3"></i></span><span><i class="icon-star3"></i></span></p>
-                                </blockquote>
-                            </div>
-                        </div>
+                       @endforeach
+                     
+                       
                     </div>
                 </div>
             </div>
@@ -475,61 +302,5 @@
     </div>
 
 
-    <div id="colorlib-blog">
-        <div class="container">
-            <div class="row animate-box">
-                <div class="col-md-6 col-md-offset-3 text-center colorlib-heading">
-                    <h2>Recent blog</h2>
-                    <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4 animate-box">
-                    <div class="blog-entry">
-                        <a href="blog.html" class="blog-img" style="background-image: url(website/images/blog-1.jpg);"></a>
-                        <div class="desc">
-                            <p class="date">
-                                <span><a href="#">Admin</a></span>
-                                <span>June 8 2017</span>
-                                <span><a href="#">4 <i class="icon-speech-bubble"></i></a></span>
-                            </p>
-                            <h3><a href="blog.html">Here's why yoga is best for your health</a></h3>
-                            <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-                            <p><a href="#">Read more <i class="icon-arrow-right3"></i></a></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 animate-box">
-                    <div class="blog-entry">
-                        <a href="blog.html" class="blog-img" style="background-image: url(website/images/blog-2.jpg);"></a>
-                        <div class="desc">
-                            <p class="date">
-                                <span><a href="#">Admin</a></span>
-                                <span>June 8 2017</span>
-                                <span><a href="#">4 <i class="icon-speech-bubble"></i></a></span>
-                            </p>
-                            <h3><a href="blog.html">live better get to know your medical technology</a></h3>
-                            <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-                            <p><a href="#">Read more <i class="icon-arrow-right3"></i></a></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 animate-box">
-                    <div class="blog-entry">
-                        <a href="blog.html" class="blog-img" style="background-image: url(website/images/blog-3.jpg);"></a>
-                        <div class="desc">
-                            <p class="date">
-                                <span><a href="#">Admin</a></span>
-                                <span>June 8 2017</span>
-                                <span><a href="#">4 <i class="icon-speech-bubble"></i></a></span>
-                            </p>
-                            <h3><a href="blog.html">Eating apple is the source of energy</a></h3>
-                            <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-                            <p><a href="#">Read more <i class="icon-arrow-right3"></i></a></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+  
 @endsection

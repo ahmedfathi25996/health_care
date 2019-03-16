@@ -36,6 +36,11 @@ class Kernel extends HttpKernel
             \App\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
         ],
+        'admin' => [
+            \Illuminate\Auth\Middleware\Authenticate::class,
+            \App\Http\Middleware\RoleMiddleware::class,
+            \App\Http\Middleware\ActivatedMiddleware::class,
+        ],
 
         'api' => [
             'throttle:60,1',
@@ -59,5 +64,12 @@ class Kernel extends HttpKernel
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
+        'role' =>    \App\Http\Middleware\RoleMiddleware::class,
+       'activate' =>    \App\Http\Middleware\ActivatedMiddleware::class,
+
+
+        
+
+
     ];
 }

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Symptom;
 use RealRashid\SweetAlert\Facades\Alert;
+use Spatie\Activitylog\Models\Activity;
+use Illuminate\Support\Facades\Auth;
 
 class SymptomController extends Controller
 {
@@ -55,9 +57,13 @@ class SymptomController extends Controller
 
        if($symptoms->save())
        {
+        activity()->causedBy(Auth::user())->useLog('Add Symptom')->log('Add Symptom By Admin');
+
                         Alert::success('Symptom Added Successfully');
 
+
        return redirect('/adminpanel/symptoms');
+       
        }
     }
 
@@ -110,6 +116,9 @@ class SymptomController extends Controller
 
        if($symptoms->save())
        {
+        activity()->causedBy(Auth::user())->useLog('Update Symptom')->log('Update Symptom By Admin');
+
+
                         Alert::success('Symptom Updated Successfully');
 
        return redirect('/adminpanel/symptoms');
@@ -126,6 +135,8 @@ class SymptomController extends Controller
     {
          $symptom=Symptom::find($id);
         $symptom->delete();
+        activity()->causedBy(Auth::user())->useLog('Delete Symptom')->log('Delete Symptom By Admin');
+
         Alert::success('Symptom Deleted Successfully');
 
         return redirect('/adminpanel/symptoms');

@@ -82,6 +82,19 @@
                                     @endif
                                 </div>
                             </div>
+                            <div class="form-group{{ $errors->has('activated') ? ' has-error' : '' }}">
+                            <label for="activated" class="col-md-4 control-label">Active</label>
+
+                            <div class="col-md-6">
+                                <input id="activated" type="number" class="form-control" name="activated" value="{{ old('name') }}">
+
+                                @if ($errors->has('activated'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('activated') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
 
                             <div class="form-group{{ $errors->has('image') ? ' has-error' : '' }}">
                                 <label for="image" class="col-md-4 control-label">User Image</label>
