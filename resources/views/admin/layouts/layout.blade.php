@@ -199,24 +199,24 @@
                             </li>
                               <li class="active treeview">
                               <a href="#">
-                                <i class="ion ion-ios-gear-outline" ></i> <span>Users Activities</span>
+                                <i class="fa fa-tasks" ></i> <span>Users Activities</span>
                                 <span class="pull-right-container">
                                   <i class="fa fa-angle-left pull-right"></i>
                                 </span>
                               </a>
                               <ul class="treeview-menu">
-                                <li class="active"><a href="/adminpanel/activites"><i class="ion ion-ios-gear-outline" style="color:white"></i>Show All Activites</a></li>
+                                <li class="active"><a href="/adminpanel/activites"><i class="fa fa-tasks" style="color:white"></i>Show All Activites</a></li>
                               </ul>
                             </li>
 <li class="active treeview">
                               <a href="#">
-                                <i class="ion ion-ios-gear-outline" ></i> <span>Feedbacks</span>
+                                <i class="fa fa-comments-o" ></i> <span>Feedbacks</span>
                                 <span class="pull-right-container">
                                   <i class="fa fa-angle-left pull-right"></i>
                                 </span>
                               </a>
                               <ul class="treeview-menu">
-                                <li class="active"><a href="/adminpanel/feedbacks"><i class="ion ion-ios-gear-outline" style="color:white"></i>Show All Feedbacks</a></li>
+                                <li class="active"><a href="/adminpanel/feedbacks"><i class="fa fa-comments-o" style="color:white"></i>Show All Feedbacks</a></li>
                               </ul>
                             </li>
 

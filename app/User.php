@@ -42,4 +42,9 @@ public function scopeActive($query,$api_token)
        return $query->where('api_token',$api_token)->first();
         
     }
+
+    public function city()
+    {
+        return $this->belongsTo('App\City','city_id');
+    }
 }

@@ -59,6 +59,7 @@ class DiseaseController extends Controller
        $diseases->name=$request->input('name');
 
        $diseases->description=$request->input('description');
+       $diseases->treatment = $request->input('treatment');
        $diseases->save();
  $diseases->symptoms()->attach($request->symptoms);
        if($diseases->save())
@@ -113,6 +114,8 @@ class DiseaseController extends Controller
         $data = $request->all();
         $disease=Disease::find($id);
        $disease->name=$request->input('name');
+       $disease->description=$request->input('description');
+       $disease->treatment = $request->input('treatment');
        
        if($disease->save())
        {

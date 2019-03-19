@@ -28,13 +28,13 @@
 					<h2>Contact Information</h2>
 					<div class="row contact-info-wrap">
 						<div class="col-md-3">
-							<p><span><i class="icon-location"></i></span> 198 West 21th Street, <br> Suite 721 New York NY 10016</p>
+							<p><span><i class="icon-location"></i></span> Helwan University, <br> </p>
 						</div>
 						<div class="col-md-3">
 							<p><span><i class="icon-phone"></i></span> <a href="tel://1234567920">+ 1235 2355 98</a></p>
 						</div>
 						<div class="col-md-3">
-							<p><span><i class="icon-mail"></i></span> <a href="mailto:info@yoursite.com">info@yoursite.com</a></p>
+							<p><span><i class="icon-mail"></i></span> <a href="mailto:info@yoursite.com">health@yahoo.com</a></p>
 						</div>
 						<div class="col-md-3">
 							<p><span><i class="icon-globe-outline"></i></span> <a href="#">yoursite.com</a></p>

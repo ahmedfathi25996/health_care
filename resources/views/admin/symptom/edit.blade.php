@@ -8,7 +8,6 @@
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
                     <div class="panel-heading">Update</div>
-                    <div class="panel-body">
 {!! Form::open(['action' => ['SymptomController@update',$symptom->id],'method' => 'PATCH']) !!}
     <div class="form-group">
         {{Form::label('name', 'Name')}}
@@ -22,7 +21,6 @@
 
     {{Form::submit('Submit',['class'=>'btn btn-primary'])}}
 {!! Form::close() !!}
-                    </div>
                 </div>
             </div>
         </div>

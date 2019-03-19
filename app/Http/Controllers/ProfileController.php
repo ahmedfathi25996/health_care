@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\City;
 use App\User;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Spatie\Activitylog\Models\Activity;
 use Image;
+use Spatie\Activitylog\Models\Activity;
 class ProfileController extends Controller
 {
     /**
@@ -63,7 +64,8 @@ class ProfileController extends Controller
     {
         
         $user=User::find($id);
-        return view('website.profile',compact('user'));
+        $city = City::all();
+        return view('website.profile',compact('city','user'));
     }
 
     /**
@@ -101,6 +103,9 @@ class ProfileController extends Controller
         $user->email=$request->input('email');
         $user->phone_number=$request->input('phone_number');
         $user->address=$request->input('address');
+        $user->lat = $request->input('lat');
+        $user->lng = $request->input('lng');
+        $user->city_id = $request->input('city');
         $user->save();
         activity()->causedBy(Auth::user())->useLog('Update Profile')->log('Update User Profile');
 

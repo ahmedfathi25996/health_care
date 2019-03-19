@@ -41,6 +41,20 @@
                             </div>
                         </div>
 
+                        <div class="form-group{{ $errors->has('treatment') ? ' has-error' : '' }}">
+                            <label for="treatment" class="col-md-4 control-label">Treatment</label>
+
+                            <div class="col-md-6">
+                                <input id="treatment" type="text" class="form-control" name="treatment" value="{{ old('treatment') }}">
+
+                                @if ($errors->has('treatment'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('treatment') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
                         <div class="form-group{{ $errors->has('symptoms[]') ? ' has-error' : '' }}">
                             <label for="symptom1" class="col-md-4 control-label">Symptom 1</label>
 

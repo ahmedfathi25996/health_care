@@ -141,6 +141,8 @@
                       <input type="email" name="email" value="{{Auth::user()->email}}" class="form-control" id="inputEmail" placeholder="Email">
                     </div>
                   </div>
+
+                  
                   
                   <div class="form-group">
                     <label for="inputExperience" class="col-sm-2 control-label">Phone Number</label>
@@ -154,6 +156,20 @@
 
                     <div class="col-sm-10">
                       <input type="text" name="address" value="{{Auth::user()->address}}" class="form-control" id="inputSkills" placeholder="Address">
+                    </div>
+                  </div>
+                   <div class="form-group">
+                    <label for="inputSkills" class="col-sm-2 control-label">Latitude</label>
+
+                    <div class="col-sm-10">
+                      <input type="text" name="lat" value="{{Auth::user()->lat}}" class="form-control" id="inputSkills" placeholder="Latitude">
+                    </div>
+                  </div>
+                   <div class="form-group">
+                    <label for="inputSkills" class="col-sm-2 control-label">Longitude</label>
+
+                    <div class="col-sm-10">
+                      <input type="text" name="lng" value="{{Auth::user()->lng}}" class="form-control" id="inputSkills" placeholder="Longitude">
                     </div>
                   </div>
                 

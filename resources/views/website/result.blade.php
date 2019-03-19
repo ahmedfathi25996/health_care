@@ -65,7 +65,7 @@
                   <tr>
                     <th>Disease name</th>
                     <th>Description</th>
-                    <th>Optional Treatment</th>
+                    <th>Suggested treatment</th>
                     
                   </tr>
                   </thead>

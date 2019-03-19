@@ -53,7 +53,7 @@
                         <div class="top">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <div id="colorlib-logo"><a href="/">Health<span>care</span></a></div>
+                                    <div id="colorlib-logo"><a href="/">Health<span>care </span></a></div>
                                 </div>
                                 
                                

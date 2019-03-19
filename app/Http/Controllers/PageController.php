@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
+use App\City;
+use App\Feedback;
 use App\Http\Requests;
 use App\Symptom;
 use App\User;
-use App\Feedback;
+use Illuminate\Http\Request;
 class PageController extends Controller
 {
      public function home()
@@ -48,10 +48,20 @@ public function popup()
         return view('website.doctors');
     }
 
-    public function showAllDoctors()
+    public function showAllDoctors(Request $request)
     {
-        $doctors = User::where('role','=','doctor')->get();
-        return view('website.showalldoctors',compact('doctors'));
+        $city = City::all();
+        $location = $request->input('city');
+        $doctors = new User();
+        if($location)
+            $doctors = $doctors->with('city')->where('role','doctor')->where('city_id',$location);
+        
+        
+        $doctors = $doctors->where('role','doctor')->get();
+      
+
+        
+        return view('website.showalldoctors',compact('doctors','city'));
     }
 
     public function showAllPatients()
@@ -60,6 +70,25 @@ public function popup()
 
         return view('website.showallpatients',compact('patients'));
     }
+
+    public function showSingleDoctor($id)
+    {
+        $doctor = User::find($id);
+        return view('website.singledoctor',compact('doctor'));
+    }
+//      public function filterDoctor(Request $request)
+//      {
+
+      
+
+//      $location = $request->input('city');
+//        User::where('role','doctor')->where('city','=',$location)->get();
+//         return view('website.showalldoctors');
+
+
+
+
+// }
 
 
 

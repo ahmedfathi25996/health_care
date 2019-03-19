@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Disease;
 use App\Symptom;
-use RealRashid\SweetAlert\Facades\Alert;
+use Carbon\Carbon;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+use RealRashid\SweetAlert\Facades\Alert;
 use Spatie\Activitylog\Models\Activity;
 class diseaseByDoctor extends Controller
 {
@@ -45,6 +47,7 @@ class diseaseByDoctor extends Controller
        $diseases->name=$request->input('name');
 
        $diseases->description=$request->input('description');
+       $diseases->treatment = $request->input('treatment');
        $diseases->save();
  $diseases->symptoms()->attach($request->symptoms);
        if($diseases->save())
@@ -90,26 +93,42 @@ class diseaseByDoctor extends Controller
      */
     public function update(Request $request, $id)
     {
+         
          //Validation
-         $this->validate($request,[
-            'disease_name' => 'required',
+        $this->validate($request,[
+            'name' => 'required',
             
             
         ]);
+        $data = $request->all();
         $disease=Disease::find($id);
        $disease->name=$request->input('name');
-
-       $disease->save();
- $disease->symptoms()->attach($request->symptoms);
+       $disease->description=$request->input('description');
+       $disease->treatment = $request->input('treatment');
+       
        if($disease->save())
        {
-        activity()->causedBy(Auth::user())->useLog('Update Disease')->log('Update Disease By Doctor');
+        DB::table('diseases_symptoms')->where('disease_id',$id)->delete();
+
+        foreach ($data['symptoms'] as $sym => $value) {
+        DB::table('diseases_symptoms')->where('disease_id','=',$id)->insert([
+            'disease_id'=>$disease->id,
+            'symptom_id'=>$value,
+            
+            'created_at'=>Carbon::now(),
+            'updated_at'=>Carbon::now()
+
+         ]);
+
+        }
+        activity()->causedBy(Auth::user())->useLog('Update Disease')->log('Update Disease');
 
                 Alert::success('Disease Updated Successfully');
 
-       return redirect('/doctor/diseases');
+        return redirect('/doctor/diseases');;
        }
-    }
+
+}
 
     /**
      * Remove the specified resource from storage.

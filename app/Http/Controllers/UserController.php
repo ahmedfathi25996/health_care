@@ -2,17 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
+use App\City;
+use App\Events\UserRegistered;
 use App\Http\Requests;
 use App\User;
+use Carbon\Carbon;
+use Illuminate\Auth\Events\Registered;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use RealRashid\SweetAlert\Facades\Alert;
 use Spatie\Activitylog\Models\Activity;
-use Illuminate\Auth\Events\Registered;
-use App\Events\UserRegistered;
-//use App\Jobs\ActivationJob;
-use Carbon\Carbon;
 
 
 class UserController extends Controller
@@ -40,7 +40,8 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('admin.user.add');
+      $city = City::all();
+        return view('admin.user.add',compact('city'));
     }
 
     /**
@@ -81,6 +82,11 @@ class UserController extends Controller
        $users->name=$request->input('name');
        $users->email=$request->input('email');
        $users->password=bcrypt($request->input('password'));
+       $users->address = $request->input('address');
+       $users->lat = $request->input('lat');
+       $users->lng = $request->input('lng');
+       $users->city_id = $request->input('city');
+       $users->phone_number = $request->input('phone_number');
        //$user->api_token= str_random(60);
 
        $users->role=$request->input('role');
@@ -116,7 +122,9 @@ class UserController extends Controller
     public function edit($id)
     {
         $user=User::find($id);
-        return view('admin.user.edit',compact('user'));
+              $city = City::all();
+
+        return view('admin.user.edit',compact('user','city'));
     }
 
     /**
@@ -156,6 +164,11 @@ class UserController extends Controller
       
        $user->name=$request->input('name');
        $user->email=$request->input('email');
+       $user->address = $request->input('address');
+       $user->lat = $request->input('lat');
+       $user->lng = $request->input('lng');
+       $user->city_id = $request->input('city');
+       $user->phone_number = $request->input('phone_number');
       // $user->password=bcrypt($request->input('password'));
        $user->role=$request->input('role');
       // $user->image=$fileName;

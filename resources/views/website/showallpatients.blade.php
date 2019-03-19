@@ -164,8 +164,7 @@ figure img{width:300px;}
                       <div class="col-md-4" >
                         <div class="item-box-blog">
                           <div class="item-box-blog-image">
-                            <!--Date-->
-                            <div class="item-box-blog-date bg-blue-ui white"> <span class="mon">Augu 01</span> </div>
+                            
                             <!--Image-->
                             <figure> <img alt="" src='{{ asset("images/{$patient->image}") }}'> </figure>
                           </div>
@@ -173,19 +172,15 @@ figure img{width:300px;}
                             <!--Heading-->
                             <div class="item-box-blog-heading">
                               <a href="#" tabindex="0">
-                                <h5>{{$patient->name}}</h5>
+                                <h2>{{$patient->name}}</h2>
                               </a>
                             </div>
-                            <!--Data-->
-                            <div class="item-box-blog-data" style="padding: px 15px;">
-                              <p><i class="fa fa-user-o"></i> Admin, <i class="fa fa-comments-o"></i> Comments(3)</p>
-                            </div>
+                           
                             <!--Text-->
                             <div class="item-box-blog-text">
-                              <p>Lorem ipsum dolor sit amet, adipiscing. Lorem ipsum dolor sit amet, consectetuer adipiscing. Lorem ipsum dolor sit amet, adipiscing. Lorem ipsum dolor sit amet, adipiscing. Lorem ipsum dolor sit amet, consectetuer adipiscing. Lorem ipsum dolor.</p>
+                              <h3>E-mail: {{$patient->email}}</h3>
                             </div>
-                            <div class="mt"> <a href="#" tabindex="0" class="btn bg-blue-ui white read">read more</a> </div>
-                            <!--Read More Button-->
+                            
                           </div>
                         </div>
                       </div>

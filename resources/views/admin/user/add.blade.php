@@ -10,7 +10,6 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">Register</div>
-                <div class="panel-body">
 
                         {{ csrf_field() }}
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
@@ -82,6 +81,78 @@
                                     @endif
                                 </div>
                             </div>
+
+                        <div class="form-group{{ $errors->has('address') ? ' has-error' : '' }}">
+                            <label for="address" class="col-md-4 control-label"> Address</label>
+
+                            <div class="col-md-6">
+                                <input id="address" type="address" class="form-control" name="address" value="{{ old('address') }}">
+
+                                @if ($errors->has('address'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('address') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+                        <div class="form-group{{ $errors->has('city') ? ' has-error' : '' }}">
+                            <label for="city" class="col-md-4 control-label"> City</label>
+
+                            <div class="col-md-6">
+                                <select name="city" class="form-control input-sum">
+                                    <option value="null">Null</option>
+                                   @foreach($city as $cit)
+                                   <option value="{{$cit->id}}">{{$cit->name}}</option>
+                                   @endforeach
+                               </select>
+
+                                @if ($errors->has('city'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('city') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+                         <div class="form-group{{ $errors->has('lat') ? ' has-error' : '' }}">
+                            <label for="lat" class="col-md-4 control-label"> Latitude</label>
+
+                            <div class="col-md-6">
+                                <input id="lat" type="lat" class="form-control" name="lat" value="{{ old('lat') }}">
+
+                                @if ($errors->has('lat'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('lat') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                         <div class="form-group{{ $errors->has('lng') ? ' has-error' : '' }}">
+                            <label for="lng" class="col-md-4 control-label"> Longitude</label>
+
+                            <div class="col-md-6">
+                                <input id="lng" type="lng" class="form-control" name="lng" value="{{ old('lng') }}">
+
+                                @if ($errors->has('lng'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('lng') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+                         <div class="form-group{{ $errors->has('phone_number') ? ' has-error' : '' }}">
+                            <label for="phone_number" class="col-md-4 control-label">Phone Number</label>
+
+                            <div class="col-md-6">
+                                <input id="phone_number" type="phone_number" class="form-control" name="phone_number" value="{{ old('phone_number') }}">
+
+                                @if ($errors->has('phone_number'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('phone_number') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
                             <div class="form-group{{ $errors->has('activated') ? ' has-error' : '' }}">
                             <label for="activated" class="col-md-4 control-label">Active</label>
 
@@ -118,7 +189,7 @@
                             </div>
                         </div>
                     
-                </div>
+                
             </div>
         </div>
     </div>

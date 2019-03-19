@@ -14,6 +14,14 @@
         {{Form::label('name', 'Disease Name')}}
         {{Form::text('name', $disease->name,['class' => 'form-control','placeholder'=>'Name'])}}
     </div>
+    <div class="form-group">
+        {{Form::label('description', 'Description ')}}
+        {{Form::text('description', $disease->description,['class' => 'form-control','placeholder'=>'Description'])}}
+    </div>
+    <div class="form-group">
+        {{Form::label('treatment', 'Treatment')}}
+        {{Form::text('treatment', $disease->treatment,['class' => 'form-control','placeholder'=>'Treatment'])}}
+    </div>
                         @foreach($disease->symptoms as $sym)
 
     <div class="form-group{{ $errors->has('symptoms') ? ' has-error' : '' }}">
