@@ -19,8 +19,7 @@ class RoleMiddleware
     {
         if(Auth::user()->role !='admin')
         {
-             Alert::error('Failed', 'You Need To Be Admin To Access This Route');
-
+             
             return redirect('/');
         }
         return $next($request);

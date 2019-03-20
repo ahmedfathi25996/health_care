@@ -247,10 +247,7 @@ h3{
           <div class="row blog">
             <div class="col-md-12">
               <div id="blogCarousel" class="carousel slide container-blog" data-ride="carousel">
-                <ol class="carousel-indicators">
-                  <li data-target="#blogCarousel" data-slide-to="0" class="active"></li>
-                  <li data-target="#blogCarousel" data-slide-to="1"></li>
-                </ol>
+               
                 <!-- Carousel items -->
                 <div class="carousel-inner">
                   <div class="carousel-item active">
