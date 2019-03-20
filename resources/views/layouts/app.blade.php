@@ -76,6 +76,7 @@
                                     <li><a href="{{ url('/diseases') }}">Check Diseases</a></li>
                                      
                                     <li><a href="{{ url('/contactus') }}">Contact</a></li>
+                                     
 
                     <!-- Authentication Links -->
                     @if (Auth::guest())
@@ -147,7 +148,7 @@
 
     <!-- Copyright -->
     <div class="footer-copyright text-center py-3">© 2019 Copyright:
-      <a href="#">Ahmed Fathi</a>
+      <a href="https://github.com/ahmedfathi25996">Ahmed Fathi</a>
     </div>
     <!-- Copyright -->
 

@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
-use App\Http\Requests;
-use App\User;
 use App\Disease;
-use Charts;
 use App\Feedback;
+use App\Http\Requests;
+use App\Symptom;
+use App\User;
+use Charts;
+use Illuminate\Http\Request;
 use Spatie\Activitylog\Models\Activity;
 
 class AdminController extends Controller
@@ -19,6 +19,7 @@ class AdminController extends Controller
         $diseases=Disease::all();
         $feedbacks= Feedback::all();
         $activities= Activity::all();
+        $symptoms = Symptom::orderBy('id','desc')->take(5)->get();
         $lastUsers = User::orderBy('id', 'desc')->take(8)->get();
         $lastDiseases = Disease::orderBy('id', 'desc')->take(8)->get();
         $userChart = Charts::database(User::all(), 'bar', 'highcharts')
@@ -36,6 +37,6 @@ class AdminController extends Controller
         ->elementLabel("Total Diseases")
         ->dimensions(500, 300)
         ->groupByMonth('2019', true);
-        return view('admin.home.index',compact('users','lastUsers','lastDiseases','diseases','userChart','diseaseChart','feedbacks','activities'));
+        return view('admin.home.index',compact('users','lastUsers','lastDiseases','diseases','userChart','diseaseChart','feedbacks','activities','symptoms'));
     }
 }

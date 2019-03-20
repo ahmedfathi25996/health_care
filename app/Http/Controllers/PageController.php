@@ -76,21 +76,9 @@ public function popup()
         $doctor = User::find($id);
         return view('website.singledoctor',compact('doctor'));
     }
-//      public function filterDoctor(Request $request)
-//      {
-
-      
-
-//      $location = $request->input('city');
-//        User::where('role','doctor')->where('city','=',$location)->get();
-//         return view('website.showalldoctors');
 
 
-
-
-// }
-
-
+    
 
 
 }

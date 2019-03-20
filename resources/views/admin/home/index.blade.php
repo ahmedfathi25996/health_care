@@ -178,7 +178,7 @@
           <!-- /.row -->
  <div class="row">
         <!-- Left col -->
-        <div class="col-md-10">
+        <div class="col-md-8">
           <!-- TABLE: LATEST ORDERS -->
           <div class="box box-info">
             <div class="box-header with-border">
@@ -224,6 +224,43 @@
             <div class="box-footer clearfix">
               <a href="/adminpanel/diseases/create" class="btn btn-sm btn-info btn-flat pull-left">Add New Disease</a>
               <a href="/adminpanel/diseases" class="btn btn-sm btn-default btn-flat pull-right">View All Diseases</a>
+            </div>
+            <!-- /.box-footer -->
+          </div>
+        </div>
+          <div class="col-md-4">
+
+         <div class="box box-primary">
+            <div class="box-header with-border">
+              <h3 class="box-title">Last Added Symptoms</h3>
+
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+              </div>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+              <ul class="products-list product-list-in-box">
+                @foreach($symptoms as $symptom)
+                <li class="item">
+                  
+                  <div class="product-info">
+                    <h5>{{$symptom->name}}
+                      </h5>
+                   
+                   
+                  </div>
+
+                </li>
+               @endforeach
+                <!-- /.item -->
+              </ul>
+            </div>
+            <!-- /.box-body -->
+            <div class="box-footer text-center">
+              <a href="{{url('/adminpanel/symptoms')}}" class="uppercase">View All Symptoms</a>
             </div>
             <!-- /.box-footer -->
           </div>

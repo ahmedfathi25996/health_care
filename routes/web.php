@@ -14,7 +14,6 @@
 Route::get('/', function () {
     return view('welcome');
 });
-
     #Auth Routes
 Route::post('/user/register', 'UserController@register');
 Route::get('/activation/{api_token}',['as'=>'activation','uses'=>'UserController@activation']);
